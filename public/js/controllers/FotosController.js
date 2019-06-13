@@ -1,7 +1,7 @@
 angular.module('alurapic').controller('FotosController', function($scope, $http){
 
     $scope.fotos = [];
-    $scope.filtro = '';
+    $scope.filtro = ''; //Texto digitado pelo usuário - ng-model - two way data binding.
 
     $http.get('v1/fotos')
         .success(function(fotos){
