@@ -31,6 +31,7 @@ angular.module('alurapic').controller('FotoController', function($scope, $http, 
                 $http.post('/v1/fotos', $scope.foto) //Envia para o endereço o objeto do scope.
                     .success(function(){
                         $scope.foto = {};
+                        $scope.formulario.$setPristine();
                         $scope.mensagem = "Foto adicionada com sucesso!";
                     }).error(function(){ //Caso dê errado!
                         $scope.mensagem = "Algum problema aconteceu! Tente mais tarde!";
