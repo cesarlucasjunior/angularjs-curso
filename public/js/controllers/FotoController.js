@@ -11,7 +11,7 @@ angular.module('alurapic').controller('FotoController', function($scope, $http, 
         })
         .error(function(erro) {
             console.log(erro);
-            $scope.mensagem = 'Não foi possível obter a foto'
+            $scope.mensagem = 'Não foi possível obter a foto!'
         });
     }
 
@@ -21,11 +21,11 @@ angular.module('alurapic').controller('FotoController', function($scope, $http, 
             if($routeParams.fotoId){
                 $http.put('/v1/fotos/' + $scope.foto._id, $scope.foto)
                 .success(function() {
-                    $scope.mensagem = 'Foto alterada com sucesso';
+                    $scope.mensagem = 'Foto alterada com sucesso!';
                 })
                 .error(function(erro) {
                     console.log(erro);
-                    $scope.mensagem = 'Não foi possível alterar';
+                    $scope.mensagem = 'Não foi possível alterar!';
                 });
             }else{
                 $http.post('/v1/fotos', $scope.foto) //Envia para o endereço o objeto do scope.
